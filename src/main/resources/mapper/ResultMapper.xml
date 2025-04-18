@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dby.eyecareserver.mapper.ResultMapper">
+
+    <resultMap id="BaseResultMap" type="com.dby.eyecareserver.entity.Result">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="appointmentId" column="appointment_id" jdbcType="INTEGER"/>
+            <result property="examId" column="exam_id" jdbcType="INTEGER"/>
+            <result property="data" column="data" jdbcType="VARCHAR"/>
+            <result property="examTime" column="exam_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,appointment_id,exam_id,
+        data,exam_time
+    </sql>
+</mapper>
