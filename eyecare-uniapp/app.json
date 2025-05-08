@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "eyecare",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/appointment/appointment",
+    "pages/message/message",
+    "pages/user/user",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarTitleText": "青少年视力调查",
+    "navigationBarBackgroundColor": "#1E90FF",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "eyecare",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "text": "预约",
+        "iconPath": "images/appointment.png",
+        "selectedIconPath": "images/appointment-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-active.png"
+      }
+    ],
+    "color": "#999",
+    "selectedColor": "#1E90FF",
+    "backgroundColor": "#fff",
+    "borderStyle": "black"
+  }
+}

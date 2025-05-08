@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="message-box">
+  <input placeholder="用户ID" value="{{userid}}" bindinput="inputUserid"  class="input" />
+    <view class="title">留言管理</view>
+    <textarea placeholder="请输入留言内容" value="{{content}}" bindinput="inputContent" class="textarea" />
+    <button type="primary" bindtap="handleSubmit">提交留言</button>
+  </view>
+</view>

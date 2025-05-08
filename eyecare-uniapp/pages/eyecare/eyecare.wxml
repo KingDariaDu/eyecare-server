@@ -1,0 +1,17 @@
+<view class="container">
+  <swiper indicator-dots autoplay interval="3000" duration="500">
+    <swiper-item>
+      <image src="../../images/banner1.jpg" mode="aspectFill"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/banner2.jpg" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  
+  <view class="exam-list">
+    <view class="exam-item" wx:for="{{examList}}" wx:key="id">
+      <image src="{{item.image}}"></image>
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>

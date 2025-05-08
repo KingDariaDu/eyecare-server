@@ -1,0 +1,12 @@
+<view class="container" style="height: auto; display: flex; box-sizing: border-box">
+  <view class="header">
+    <text>青少年视力调查</text>
+  </view>
+  <view class="welcome">欢迎使用青少年眼科服务管理系统</view>
+  <view class="nav" style="width: 520rpx; height: auto; display: flex; box-sizing: border-box">
+    <navigator url="/pages/login/login" class="nav-item">登录</navigator>
+    <navigator url="/pages/register/register" class="nav-item">注册</navigator>
+    <navigator url="/pages/message/message" class="nav-item">留言反馈</navigator>
+    <navigator url="/pages/result/result" class="nav-item">结果查询</navigator>
+  </view>
+</view>

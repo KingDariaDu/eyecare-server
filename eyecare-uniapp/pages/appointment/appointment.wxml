@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="appointment-box">
+    <view class="title">预约管理</view>
+    <picker mode="selector" mode="date" bindchange="handleDateChange">
+      <view class="picker" style="color: green">选择预约日期</view>
+    </picker>
+    <input placeholder="用户ID" bindchange="inputUserid" class="input" />
+    <picker mode="selector" range="{{examList}}" bindchange="handleExamChange">
+      <view class="picker" style="color: green">选择预约项目</view>
+    </picker>
+    <button type="primary" bindtap="handleSubmit">提交预约</button>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="login-box">
+    <view class="title">青少年眼科服务</view>
+    <input placeholder="请输入用户名" value="{{username}}" bindinput="inputUsername" class="input" />
+    <input placeholder="请输入密码" value="{{password}}" bindinput="inputPassword" class="input" />
+    <button type="primary" bindtap="handleLogin">登录</button>
+    <button type="warn" bindtap="testConnection" style="margin-top: 20rpx;">测试连接</button>
+    <view class="register-link" bindtap="navigateToRegister">没有账号？立即注册</view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+  <view class="header">
+    <text>检测结果查询</text>
+  </view>
+  
+  <view class="result-list">
+    <view class="table-container">
+      <view class="table-row header-row">
+        <view class="table-cell">ID</view>
+        <view class="table-cell">预约ID</view>
+        <view class="table-cell">检查ID</view>
+        <view class="table-cell">数据</view>
+        <view class="table-cell">检查时间</view>
+      </view>
+      <block wx:for="{{resultList}}" wx:key="id">
+        <view class="table-row">
+          <view class="table-cell">{{item.id}}</view>
+          <view class="table-cell">{{item.appointmentId}}</view>
+          <view class="table-cell">{{item.examId}}</view>
+          <view class="table-cell">{{item.data}}</view>
+          <view class="table-cell">{{item.examTime}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{!hasMore}}" class="no-more">没有更多数据了</view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="register-box">
+    <view class="title">用户注册</view>
+    <input placeholder="请输入用户名" bindinput="inputUsername" class="input" />
+    <input placeholder="请输入密码" password bindinput="inputPassword" class="input" />
+    <input placeholder="请确认密码" password bindinput="inputConfirmPassword" class="input" />
+    <input placeholder="请输入电话号码" bindinput="inputPhone" class="input" />
+    <button type="primary" bindtap="handleRegister">注册</button>
+    <view class="login-link" bindtap="navigateToLogin">已有账号？立即登录</view>
+  </view>
+</view>

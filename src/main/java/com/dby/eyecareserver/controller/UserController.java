@@ -18,8 +18,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 @Tag(name = "用户管理")
+@CrossOrigin
 @RestController
 public class UserController {
     @Autowired
@@ -72,16 +75,19 @@ public class UserController {
         @Parameter(name = "username", description = "用户名", required = true),
         @Parameter(name = "password", description = "密码", required = true)
     })
-    @GetMapping("/user/login")
-    public ResultDto login(String username, String password) {
+    @PostMapping("/user/login")
+
+    public ResultDto login(String username,String password) {
+        System.out.println("登录查询用户: " + username);
         User user = userService.getOne(new QueryWrapper<User>().eq("username", username));
         if (user == null) {
+            System.out.println("用户不存在: " + username);
             return ResultDto.error().setMsg("用户不存在");
         }
-        
+        System.out.println("用户存在: " + username + "尝试登录");
         String encryptedInput = SecureUtil.md5(password + user.getToken());
         if (user.getPassword().equals(encryptedInput)) {
-            return ResultDto.ok().setMsg("登录成功").setData(user);
+            return ResultDto.ok().setMsg("登录成功").setData(user).setCode(200);
         }
         return ResultDto.error().setMsg("密码错误");
     }
@@ -139,6 +145,14 @@ public class UserController {
     public ResultDto deleteUser(Integer id) {
         boolean success = userService.removeById(id);
         return success ? ResultDto.ok().setMsg("删除成功") : ResultDto.error().setMsg("删除失败");
+    }
+    
+    @Operation(summary = "查询用户信息")
+    @Parameter(name = "id", description = "用户ID", required = true)
+    @GetMapping("/user/get")
+    public ResultDto getUser(Integer id) {
+        User user = userService.getById(id);
+        return user != null ? ResultDto.ok().setData(user) : ResultDto.error().setMsg("用户不存在");
     }
     //未完全实现
     @Operation(summary = "分页查询用户列表")

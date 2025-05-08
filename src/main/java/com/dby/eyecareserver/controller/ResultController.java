@@ -59,8 +59,7 @@ public class ResultController {
             @RequestParam(required = false) Integer appointmentId,
             @RequestParam(required = false) Integer examId) {
         Page<Result> page = new Page<>(pageNum, pageSize);
-// 以下是修正后的代码
-QueryWrapper<Result> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<Result> queryWrapper = new QueryWrapper<>();
         if (appointmentId != null) {
             queryWrapper.eq("appointment_id", appointmentId);
         }
@@ -68,7 +67,7 @@ QueryWrapper<Result> queryWrapper = new QueryWrapper<>();
             queryWrapper.eq("exam_id", examId);
         }
         Page<Result> resultPage = resultService.page(page, queryWrapper);
-        return ResultDto.ok().setData(resultPage.getRecords());
+        return ResultDto.ok().setData(resultPage.getRecords()).setCode(200);
     }
 
     @Operation(summary = "更新检测结果")
